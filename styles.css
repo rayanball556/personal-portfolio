@@ -109,6 +109,10 @@ button {
   z-index: 1;
 }
 
+.page-main {
+  overflow: hidden;
+}
+
 .section-shell {
   width: min(var(--container-width), calc(100% - 48px));
   margin: 0 auto;
@@ -182,6 +186,7 @@ button {
   display: flex;
   align-items: center;
   gap: 12px;
+  min-width: 0;
 }
 
 .theme-toggle {
@@ -286,6 +291,21 @@ button {
   gap: 48px;
 }
 
+.hero-copy,
+.hero-visual,
+.story-card,
+.identity-card,
+.timeline-card,
+.skill-card,
+.feature-project,
+.incubator-card,
+.contact-card,
+.contact-form-card,
+.quote-card,
+.interest-card {
+  min-width: 0;
+}
+
 .hero-copy {
   display: flex;
   flex-direction: column;
@@ -297,6 +317,7 @@ button {
   align-items: center;
   gap: 12px;
   width: fit-content;
+  max-width: 100%;
   padding: 10px 16px;
   border-radius: 999px;
   background: rgba(22, 30, 49, 0.82);
@@ -304,6 +325,7 @@ button {
   color: var(--muted);
   font-size: 0.75rem;
   letter-spacing: 0.01em;
+  white-space: normal;
 }
 
 .pulse-wrap {
@@ -313,6 +335,7 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .pulse-ring {
@@ -471,6 +494,7 @@ button {
   display: flex;
   align-items: center;
   gap: 10px;
+  min-width: 0;
 }
 
 .light {
@@ -491,6 +515,9 @@ button {
   font-size: 0.68rem;
   letter-spacing: 0.08em;
   color: var(--soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .online-pill {
@@ -1530,6 +1557,7 @@ button {
   font-size: 0.82rem;
   line-height: 1.5;
   word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .contact-subtext {
@@ -1789,6 +1817,11 @@ textarea {
 
   .hero-copy {
     gap: 18px;
+  }
+
+  .status-badge {
+    width: 100%;
+    white-space: normal;
   }
 
   .metric-grid,
